@@ -9,7 +9,9 @@ jobs:
       - id: sync
         uses: solubris/insync@1.2.0
         with:
-          repositories: experimentation
+          repositories: |
+            experimentation
+            typedtuples
           token: ${{ secrets.INSYNC_DST_TOKEN }}
           files: |
             .gitignore

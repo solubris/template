@@ -1,0 +1,17 @@
+on:
+  push:
+    branches: [master]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - id: sync
+        uses: solubris/insync@1.2
+        with:
+          repositories: experimentation
+          token: ${{ secrets.INSYNC_DST_TOKEN }}
+          files: |
+            .gitignore
+            .editorconfig
+            .github/dependabot.yml
